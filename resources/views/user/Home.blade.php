@@ -38,12 +38,13 @@
                     </div>
                     <div class="row">
                         @foreach ($new_film as $row)
+                        @if (array_key_exists($row->id, $ep))
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
                                     <a href="{{route('detail_index', ['id' => $row->id])}}">
                                         <div class="product__item__pic set-bg" data-setbg="{{$row->img}}">
                                             <div class="ep">
-                                                {{$ep[$row->id]??''}}
+                                                {{ $ep[$row->id]}}
                                             </div>
                                             <div class="comment"><i class="fa fa-comments"></i>
                                                 @foreach ($comment as $item)
@@ -60,6 +61,7 @@
                                     </div>
                                 </div>
                             </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>
@@ -73,6 +75,7 @@
                     </div>
                     <div class="row">
                         @foreach ($appreciated as $row)
+                        @if (array_key_exists($row->id, $ep))
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
                                     <a href="{{route('detail_index', ['id' => $row->id])}}">
@@ -93,6 +96,7 @@
                                     </div>
                                 </div>
                             </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>
