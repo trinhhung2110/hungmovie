@@ -32,6 +32,9 @@
         .swal2-select{
             display: none
         }
+        .header__logo a img, .footer__logo a img {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -49,7 +52,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo" style="padding: 11px 0;">
                         <a href="{{route('user_home_index')}}">
-                            <img src="{{ asset('img/user/logo.png')}}" alt="">
+                            <img src="{{ asset('img/user/logo.svg')}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -121,7 +124,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="{{ asset('img/user/logo.png')}}" alt=""></a>
+                    <a href="./index.html"><img src="{{ asset('img/user/logo.svg')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
