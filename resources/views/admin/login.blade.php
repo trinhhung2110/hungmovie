@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/admin/style2.css ')}}">

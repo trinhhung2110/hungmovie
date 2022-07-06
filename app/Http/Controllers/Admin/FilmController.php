@@ -56,7 +56,7 @@ class FilmController extends Controller
             ->where('category.flag_delete', ACTIVE)
             ->get();
 
-        return view('admin.film.index',
+        return view('admin.film.Index',
             [
                 'data' => $data,
                 'category' => $category,
