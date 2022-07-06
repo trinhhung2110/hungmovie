@@ -34,7 +34,7 @@ class HomeAdminController extends Controller
     public function index()
     {
         $data = Auth::guard('admin')->user();
-        return view('admin.home', compact('data'));
+        return view('admin.Home', compact('data'));
     }
 
     /**
