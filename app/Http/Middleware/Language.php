@@ -21,6 +21,6 @@ class Language
             app()->setlocale(Session::get('language'));
         }
 
-        return $next($request)->header('Access-Control-Allow-Origin', '*');
+        return $next($request);
     }
 }
