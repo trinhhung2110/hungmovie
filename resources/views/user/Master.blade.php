@@ -32,6 +32,9 @@
         .swal2-select{
             display: none
         }
+        .header__logo a img, .footer__logo a img {
+            width: 100%;
+        }
     </style>
 </head>
 

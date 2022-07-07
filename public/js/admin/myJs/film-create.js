@@ -50,12 +50,14 @@ $(document).ready(function() {
             },
             quoc_gia: {
                 required: true,
+                maxlength: 255
             },
             nam_sx: {
                 required: true,
             },
             mota: {
                 required: true,
+                maxlength: 255
             },
             link_trailer: {
                 extension: "mp4"
@@ -76,12 +78,14 @@ $(document).ready(function() {
             },
             quoc_gia: {
                 required: "Quốc gia không được để trống",
+                maxlength: "không quá 255 kí tự",
             },
             nam_sx: {
                 required: "Năm sản xuất không được để trống",
             },
             mota: {
                 required: "Mô tả không được để trống",
+                maxlength: "không quá 255 kí tự",
             },
             link_trailer: {
                 extension: "Link trailer được chọn phải thuộc mp4"
