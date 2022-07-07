@@ -25,7 +25,7 @@ class CreateFilmTable extends Migration
             $table->integer('luot_xem')->default(0);
             $table->string('quoc_gia');
             $table->string('link_trailer')->nullable();
-            $table->boolean('flag_delete')->default('1');
+            $table->integer('flag_delete')->default('1');
             $table->timestamps();
         });
     }

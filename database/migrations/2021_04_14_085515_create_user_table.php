@@ -21,7 +21,7 @@ class CreateUserTable extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->date('birthday')->nullable();
-            $table->boolean('flag_delete')->default('1');
+            $table->integer('flag_delete')->default('1');
             $table->timestamps();
         });
     }

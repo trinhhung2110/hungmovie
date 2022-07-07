@@ -21,7 +21,7 @@ class CreateAdminTable extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->date('birthday')->nullable();
-            $table->boolean('status')->default('1');
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }
