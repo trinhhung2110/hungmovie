@@ -38,6 +38,8 @@ class Service
      */
     public static function uploadimg($request)
     {
+        ini_set('upload_max_filesize', '100M');
+        ini_set('post_max_size', '100M');
         $file =  $request->file('avatar');
         $fileName = time() . '1.' . $file -> getClientOriginalExtension();
         $request -> avatar -> move(public_path('/upload/avatar'), $fileName);
@@ -53,6 +55,8 @@ class Service
      */
     public static function uploadimg_background($request)
     {
+        ini_set('upload_max_filesize', '100M');
+        ini_set('post_max_size', '100M');
         $file2 =  $request->file('background');
         $fileName2 = time() . '2.' . $file2 -> getClientOriginalExtension();
         $request -> background -> move(public_path('/upload/avatar'), $fileName2);
@@ -68,6 +72,8 @@ class Service
      */
     public static function uploadLink_trailer($request)
     {
+        ini_set('upload_max_filesize', '100M');
+        ini_set('post_max_size', '100M');
         $file3 =  $request->file('link_trailer');
         $fileName3 = time() . '.' . $file3 -> getClientOriginalExtension();
         $request -> link_trailer -> move(public_path('/upload/mp4'), $fileName3);
