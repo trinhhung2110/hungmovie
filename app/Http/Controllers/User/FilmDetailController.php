@@ -49,7 +49,7 @@ class FilmDetailController extends Controller
 
         $ep1 = Episode::select(
             'id_film',
-            DB::raw("MAX(`updated_at`) as updated_at")
+            DB::raw("MAX(updated_at) as updated_at")
         )->groupBy('id_film')->get();
 
         $ep = [];
