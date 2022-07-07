@@ -9,7 +9,7 @@
     )->where('film.flag_delete', ACTIVE)
     ->where('views_from_time_to_time.updated_at', '>', $today)
     ->orderBy('views_from_time_to_time.luot_xem', 'DESC')
-    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'luot_xem')
+    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'views_from_time_to_time.luot_xem')
     ->take(6)->get();
 
     $this_week = Carbon\Carbon::now()->subDays(7)->format('Y-m-d H:i:s');
@@ -22,7 +22,7 @@
     )->where('film.flag_delete', ACTIVE)
     ->where('views_from_time_to_time.updated_at', '>', $this_week)
     ->orderBy('views_from_time_to_time.luot_xem', 'DESC')
-    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'luot_xem')
+    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'views_from_time_to_time.luot_xem')
     ->take(6)->get();
 
     $this_month = Carbon\Carbon::now()->subDays(30)->format('Y-m-d H:i:s');
@@ -35,7 +35,7 @@
     )->where('film.flag_delete', ACTIVE)
     ->where('views_from_time_to_time.updated_at', '>', $this_month)
     ->orderBy('views_from_time_to_time.luot_xem', 'DESC')
-    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'luot_xem')
+    ->groupBy('views_from_time_to_time.id_film', 'film.img', 'film.name', 'views_from_time_to_time.luot_xem')
     ->take(6)->get();
     $hero = App\Models\Film::select(
         'id',
