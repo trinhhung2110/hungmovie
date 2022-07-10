@@ -35,8 +35,8 @@ class StatisticalController extends Controller
             default:
                 $startDate = Carbon::now()->add(-30, 'day')->format('Y-m-d');
                 $endDate = Carbon::now();
-                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('DAY(created_at) AS date'), DB::raw('DATE(created_at) AS createDate'))
-                    ->groupBy(DB::raw('DATE(created_at)'), DB::raw('DAY(created_at)'));
+                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('extract(day from created_at) AS date'), DB::raw('DATE(created_at) AS createDate'))
+                    ->groupBy(DB::raw('DATE(created_at)'), DB::raw('extract(day from created_at)'));
 
                 break;
         }
@@ -44,8 +44,8 @@ class StatisticalController extends Controller
             $startDate = $request->startDate;
             $endDate = $request->endDate;
         }
-        $charts = $charts->where(DB::raw('to_date(cast(created_at as TEXT),"YYYY-MM-DD")'), '>=', $startDate)
-                        ->where(DB::raw('to_date(cast(created_at as TEXT),"YYYY-MM-DD")'), '<=', $endDate)->get();
+        $charts = $charts->where('created_at', '>=', $startDate)
+                        ->where('created_at', '<=', $endDate)->get();
         switch ($request->order) {
             case 'week':
                 $startDate2 = new Carbon($startDate);
