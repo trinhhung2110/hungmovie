@@ -78,7 +78,6 @@ class StatisticalController extends Controller
                 }
                 break;
         }
-        dd($a);
         return view('admin.statistical.chart', ['charts' => $a]);
     }
 
