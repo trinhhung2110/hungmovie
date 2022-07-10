@@ -44,8 +44,8 @@ class StatisticalController extends Controller
             $startDate = $request->startDate;
             $endDate = $request->endDate;
         }
-        $charts = $charts->where('created_at', '>=', $startDate)
-                        ->where('created_at', '<=', $endDate)->get();
+        $charts = $charts->where(DB::raw('to_date(cast(created_at as TEXT),"YYYY-MM-DD")'), '>=', $startDate)
+                        ->where(DB::raw('to_date(cast(created_at as TEXT),"YYYY-MM-DD")'), '<=', $endDate)->get();
         switch ($request->order) {
             case 'week':
                 $startDate2 = new Carbon($startDate);
