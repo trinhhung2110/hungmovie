@@ -50,7 +50,7 @@
                                     <span class="icon_profile"></span>
                                 </div>
                                 <div class="input__item input__item2">
-                                <div class="form-group row" style="margin-bottom: 25px;">
+                                {{-- <div class="form-group row" style="margin-bottom: 25px;">
                                     <div class="input-group col-md-6">
                                         <div class="custom-file" style="display: block" >
                                             <input type="file" class="custom-file-input @error('avatar') is-invalid  @enderror" id="exampleInputFile" style="overflow: hidden;display: block;z-index:2" name="avatar" onchange="get_img(event)" autofocus>
@@ -70,7 +70,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="site-btn">{{__('Sign up Now')}}</button>
                             <h5>{{__('Already have an account?')}} <a href="{{route('user_login')}}">{{__('Log In')}}!</a></h5>
@@ -132,9 +132,6 @@
                     required: true,
                     maxlength: 255,
                     minlength: 6
-                },
-                avatar: {
-                    extension: "png|jpg|jpeg|jfif"
                 }
             },
             messages: {
@@ -157,9 +154,6 @@
                     required: "Password không được để trống",
                     maxlength: "không quá 255 kí tự",
                     minlength: "phải lớn hơn 6 kí tự",
-                },
-                avatar: {
-                    extension: "file được chọn phải thuộc jpg,jpeg,png,jfif"
                 }
             }
         })

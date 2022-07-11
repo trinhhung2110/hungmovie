@@ -34,7 +34,7 @@ class ProfileController extends Controller
     public function index()
     {
         $data = Auth::guard('web')->user();
-        return view('user.profile', ['data' => $data]);
+        return view('user.Profile', ['data' => $data]);
     }
 
     /**

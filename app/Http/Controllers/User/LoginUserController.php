@@ -86,10 +86,10 @@ class LoginUserController extends Controller
             'birthday' => $request->birthday,
         ];
 
-        if ($request->hasFile('avatar')) {
-            $request->avatar = '/upload/avatar/' . $this->Service->uploadimg($request);
-            $array = $array + [ 'avatar' => $request->avatar];
-        }
+        // if ($request->hasFile('avatar')) {
+        //     $request->avatar = '/upload/avatar/' . $this->Service->uploadimg($request);
+        //     $array = $array + [ 'avatar' => $request->avatar];
+        // }
 
         DB::transaction(function () use($array) {
             User::insert([$array]);

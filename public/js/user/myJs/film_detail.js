@@ -120,7 +120,7 @@ function loadComment(page) {
             }
         },
         success: function(response) {
-            if (response[0] == null) {
+            if (response[0] == null || response.length <= 5) {
                 $("#see-more-comment").css("display", "none");
             }
             response.forEach(data => {
