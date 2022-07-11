@@ -22,7 +22,7 @@ class StatisticalController extends Controller
                 $startDate = Carbon::now()->add(-7, 'week')->format('Y-m-d');
                 $endDate = Carbon::now();
                 $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('extract(WEEK from created_at) AS date'), DB::raw('extract(year from created_at) AS year'))
-                    ->groupBy( DB::raw('extract(WEEK from created_at)'), DB::raw('extract(year from created_at) AS date'));
+                    ->groupBy( DB::raw('extract(WEEK from created_at)'), DB::raw('extract(year from created_at)'));
 
                 break;
             case 'month':
