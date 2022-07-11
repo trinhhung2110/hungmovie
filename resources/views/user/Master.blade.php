@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Anime | Template</title>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7078401775680636"
+    crossorigin="anonymous"></script>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -133,7 +134,7 @@
             </div>
             <div class="col-lg-3">
                 <p>
-                    {{__('Copyright')}} &copy;<script>document.write(new Date().getFullYear());</script> {{__('All rights reserved | This template is made with')}} &hearts; {{__('by')}} <br> <a href="https://www.facebook.com/hiep25122" target="_blank">Hiep</a>
+                    {{__('Copyright')}} &copy;<script>document.write(new Date().getFullYear());</script> {{__('All rights reserved | This template is made with')}} &hearts; {{__('by')}} <br> <a href="https://www.facebook.com/trinhhung00" target="_blank">hung</a>
                 </p>
                 </div>
             </div>
