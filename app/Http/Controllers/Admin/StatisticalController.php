@@ -21,15 +21,15 @@ class StatisticalController extends Controller
             case 'week':
                 $startDate = Carbon::now()->add(-7, 'week')->format('Y-m-d');
                 $endDate = Carbon::now();
-                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('WEEK(created_at) AS date'), DB::raw('YEAR(created_at) AS year'))
-                    ->groupBy( DB::raw('WEEK(created_at)'), DB::raw('YEAR(created_at)'));
+                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('extract(WEEK from created_at) AS date'), DB::raw('extract(year from created_at) AS year'))
+                    ->groupBy( DB::raw('extract(WEEK from created_at)'), DB::raw('extract(year from created_at) AS date'));
 
                 break;
             case 'month':
                 $startDate = Carbon::now()->add(-12, 'month')->format('Y-m-d');
                 $endDate = Carbon::now();
-                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('MONTH(created_at) AS date'), DB::raw('YEAR(created_at) AS year'))
-                    ->groupBy( DB::raw('MONTH(created_at)'),  DB::raw('YEAR(created_at)'));
+                $charts = $charts->select(DB::raw('SUM(luot_xem) AS views'), DB::raw('extract(MONTH from created_at) AS date'), DB::raw('extract(year from created_at) AS year'))
+                    ->groupBy( DB::raw('extract(MONTH from created_at)'),  DB::raw('extract(year from created_at)'));
 
                 break;
             default:
