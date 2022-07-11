@@ -98,7 +98,10 @@
         labels  :
             [
                 @foreach ($charts as $chart)
-                    {{$chart['date'] ?? null .','}}
+                    @if (isset($chart['date'])) {
+                        {{$chart['date'].',' }}
+                    }
+                    @endif
                 @endforeach
             ],
         datasets: [
