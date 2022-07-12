@@ -90,7 +90,7 @@
                                         $href = route('watching_index', ['id' => $data->id, 'episode' => 1]);
                                     }
                                 } else {
-                                    $href = route('user_login')
+                                    $href = route('user_login');
                                 }
                             @endphp
                             <a href="{{$href}}" class="watch-btn"><span>{{__('Watch Now')}}</span> <i
