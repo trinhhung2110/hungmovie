@@ -33,11 +33,11 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
-                            <h4 class="my-2 font-weight-bold">Week Plan</h4>
+                            <img class="mb-3" src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold text-white">Week Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                         <h3 class="mb-3">20.000đ/week</h3>
+                         <h3 class="mb-3 font-weight-bold">20.000đ/week</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST">
                                 @csrf
                                 <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3" >Upgrade </button>
@@ -50,8 +50,8 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
-                            <h4 class="my-2 font-weight-bold">Month Plan</h4>
+                            <img class="mb-3" src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold text-white">Month Plan</h4>
                         </div>
                         <div class="text-center my-5">
                             <h3 class="mb-3 font-weight-bold">70.000đ/month</h3>
@@ -67,8 +67,8 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
-                            <h4 class="my-2 font-weight-bold">Year Plan</h4>
+                            <img class="mb-3" src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold text-white">Year Plan</h4>
                         </div>
                         <div class="text-center my-5">
                             <h3 class="mb-3 font-weight-bold">750.000đ/year</h3>
