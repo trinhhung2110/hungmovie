@@ -9,7 +9,7 @@
     .card-body {
         width: 80%;
     }
-    h5 {
+    h5,h2 {
         color: white
     }
 </style>
@@ -27,7 +27,11 @@
                     </div>
 
                     <div class="text-center my-5">
-                      <h2 class="mb-3">10.000vnd/week</h2><button class="btn btn-outline-danger rounded-pill" type="submit">Sign Up </button>
+                      <h2 class="mb-3">20.000vnd/week</h2>
+                      <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST">
+                        @csrf
+                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -39,8 +43,11 @@
                       <h5 class="my-4">Month Plan</h5>
                     </div>
                     <div class="text-center my-5">
-                      <h2 class="mb-3">35.000vnd/month</h2><button class="btn btn-outline-danger rounded-pill" type="submit">Sign Up </button>
-                    </div>
+                      <h2 class="mb-3">70.000vnd/month</h2>
+                      <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST">
+                        @csrf
+                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                      </form>                    </div>
                   </div>
                 </div>
             </div>
@@ -51,8 +58,11 @@
                       <h5 class="my-4">Year Plan</h5>
                     </div>
                     <div class="text-center my-5">
-                      <h2 class="mb-3">380.000vnd/year</h2><button class="btn btn-outline-danger rounded-pill" type="submit">Sign Up </button>
-                    </div>
+                      <h2 class="mb-3">750.000vnd/year</h2>
+                      <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST">
+                        @csrf
+                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                      </form>                    </div>
                   </div>
                 </div>
             </div>
