@@ -11,6 +11,7 @@ use Config;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 class HomeController extends Controller
 {
     /**
@@ -210,6 +211,7 @@ class HomeController extends Controller
                     'is_pay' => 1,
                     'expired_at' =>$expired_at,
                 ]);
+                Alert::success('Success', 'fdgdfgdf');
                 header('Location: ' . $vnp_Url);
                 die();
             } else {
