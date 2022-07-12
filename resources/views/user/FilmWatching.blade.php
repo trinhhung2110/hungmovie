@@ -21,7 +21,7 @@
                             <h5>{{__('List Episode')}}</h5>
                         </div>
                         @foreach ($episode as $row)
-                            <a {{ $row->tap_so == request()->route('episode') ? class="active" : "" }} href="{{route('watching_index', ['id' => $row->id_film, 'episode' => $row->tap_so])}}">Ep {{$row->tap_so}}</a>
+                            <a @if( $row->tap_so == request()->route('episode')) class="active" @endif href="{{route('watching_index', ['id' => $row->id_film, 'episode' => $row->tap_so])}}">Ep {{$row->tap_so}}</a>
                         @endforeach
                     </div>
                 </div>
