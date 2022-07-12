@@ -23,7 +23,7 @@
 @endif
 <section class="content">
     <div class="container mb-5">
-        @if (auth()->user()->is_pay == 1 && auth()->user()->expired_at >= Carbon\Carbon::now())
+        @if (auth()->user() && auth()->user()->is_pay == 1 && auth()->user()->expired_at >= Carbon\Carbon::now())
             <div class="alert alert-light text-center" role="alert">
                 Your account has been upgraded, the expired date is : {{ Carbon\Carbon::parse(auth()->user()->expired_at)->format('d/m/Y'); }}
             </div>
