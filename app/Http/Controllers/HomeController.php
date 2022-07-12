@@ -6,12 +6,11 @@ use App\Models\Comment;
 use App\Models\Episode;
 use App\Models\Film;
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
 use Config;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
     /**
@@ -211,7 +210,7 @@ class HomeController extends Controller
                     'is_pay' => 1,
                     'expired_at' =>$expired_at,
                 ]);
-                Alert::success('Success', 'fdgdfgdf');
+                Session::flash('pay', 'success');
                 header('Location: ' . $vnp_Url);
                 die();
             } else {
