@@ -110,6 +110,7 @@ Route::middleware('auth:web')->group( function (){
 //multi language
 Route::get('change-language/{language}', [HomeController::class, 'changeLanguage'])->name('change-language');
 Route::get('language', [HomeController::class, 'getLanguage'])->name('getLanguage');
+Route::get('/upgrade', [HomeController::class, 'upgrade'])->name('user_upgrade');
 
 
 
