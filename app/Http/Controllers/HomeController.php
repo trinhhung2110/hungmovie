@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Config;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 class HomeController extends Controller
 {
     /**
@@ -136,7 +137,7 @@ class HomeController extends Controller
         $vnp_TmnCode = "AF4FL3OI";//Mã website tại VNPAY
         $vnp_HashSecret = "CTRJDSAXFQFTENNMIBJCABUBJBZQQZPV"; //Chuỗi bí mật
 
-        $vnp_TxnRef = "1234"; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_TxnRef = Str::random(6); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = "thanh toan test";
         $vnp_OrderType = 'billpayment';
         if ($type == 1) {
