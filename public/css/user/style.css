@@ -1293,6 +1293,11 @@ ol {
     transition: all, 0.3s;
 }
 
+.anime__details__episodes .active {
+    background: #e53637;
+    color: #ffffff;
+}
+
 .anime__details__episodes a:hover {
     color: #000000;
     background: #ffffff;
