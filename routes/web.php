@@ -108,7 +108,7 @@ Route::middleware('auth:web')->group( function (){
     Route::post('upgrade/{type}', [HomeController::class, 'commit'])->name('upgrade.commit');
     Route::get('/film/watching/{id}/{episode}',[FilmWatchingController::class, 'index'])->name('watching_index')->middleware('watch');
 });
-
+Route::get('upgrade', [HomeController::class, 'upgrade'])->name('upgrade');
 //multi language
 Route::get('change-language/{language}', [HomeController::class, 'changeLanguage'])->name('change-language');
 Route::get('language', [HomeController::class, 'getLanguage'])->name('getLanguage');

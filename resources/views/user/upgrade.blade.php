@@ -23,6 +23,7 @@
 @endif
 <section class="content">
     <div class="container mb-5">
+        @if (!auth()->user() || auth()->user() && auth()->user()->is_pay == 0 && auth()->user()->expired_at >= Carbon\Carbon::now())
         <div class="row mb-5">
             <div class="col-md-4 pt-4 px-md-2 px-lg-3">
                 <div class="card">
@@ -33,10 +34,15 @@
 
                     <div class="text-center my-5">
                       <h2 class="mb-3">20.000vnd/week</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST" target="_blank">
-                        @csrf
-                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
-                      </form>
+                      @if (!auth()->user())
+                        <a href="{{ route('user_login') }}" class="btn btn-outline-danger rounded-pill" >Login</a>
+                      @else
+                        <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST" target="_blank">
+                            @csrf
+                            <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                        </form>
+                      @endif
+
                     </div>
                   </div>
                 </div>
@@ -49,10 +55,14 @@
                     </div>
                     <div class="text-center my-5">
                       <h2 class="mb-3">70.000vnd/month</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST" target="_blank">
-                        @csrf
-                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
-                      </form>                    </div>
+                      @if (!auth()->user())
+                        <a href="{{ route('user_login') }}" class="btn btn-outline-danger rounded-pill" >Login</a>
+                      @else
+                        <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST" target="_blank">
+                            @csrf
+                            <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                        </form>
+                      @endif                   </div>
                   </div>
                 </div>
             </div>
@@ -64,15 +74,23 @@
                     </div>
                     <div class="text-center my-5">
                       <h2 class="mb-3">750.000vnd/year</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST" target="_blank">
-                        @csrf
-                        <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
-                      </form>                    </div>
+                      @if (!auth()->user())
+                        <a href="{{ route('user_login') }}" class="btn btn-outline-danger rounded-pill" >Login</a>
+                      @else
+                        <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST" target="_blank">
+                            @csrf
+                            <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                        </form>
+                      @endif                 </div>
                   </div>
                 </div>
             </div>
         </div>
-
+        @else
+            <div class="alert alert-light" role="alert">
+                Your account has been upgraded, the expiry date is : {{ Carbon\Carbon::parse(auth()->user()->expired_at)->format('d/m/Y'); }}
+            </div>
+        @endif
     </div>
 </section>
 @endsection
