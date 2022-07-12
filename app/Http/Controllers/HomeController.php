@@ -9,7 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Config;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     /**
@@ -141,13 +141,13 @@ class HomeController extends Controller
         $vnp_OrderType = 'billpayment';
         if ($type == 1) {
             $vnp_Amount = 20000 * 100;
-            $expired_at = Carbon\Carbon::now()->addDays(7);
+            $expired_at = Carbon::now()->addDays(7);
         } elseif ($type == 2) {
             $vnp_Amount = 70000 * 100;
-            $expired_at = Carbon\Carbon::now()->addDays(30);
+            $expired_at = Carbon::now()->addDays(30);
         } else {
             $vnp_Amount = 750000 * 100;
-            $expired_at = Carbon\Carbon::now()->addDays(365);
+            $expired_at = Carbon::now()->addDays(365);
         }
 
 
