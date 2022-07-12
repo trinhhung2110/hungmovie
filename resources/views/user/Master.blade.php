@@ -85,7 +85,8 @@
                             <input type="text" id="search" autocomplete="off" name="search"><span class="icon_search" style="color: aliceblue;"></span>
                             <span class="bt-profile" id="profile">
                                 @if (Auth::guard('web')->user() != null)
-                                    <img src="{{Auth::guard('web')->user()->avatar}}" alt="" class="avatar-profile">
+                                    <img src="{{ asset('img/user/profile_none.png')}}" alt="" class="avatar-profile">
+
                                     <div class="select-profile">
                                         <a href="{{route('user_follow')}}">{{__('Follow')}}</a>
                                         <a href="{{route('user_profile')}}">{{__('Profile')}}</a>

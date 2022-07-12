@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class LoginUserController extends Controller
 {
@@ -84,6 +85,7 @@ class LoginUserController extends Controller
             'user_name' => $request->user_name,
             'password' => bcrypt($request->password),
             'birthday' => $request->birthday,
+            'expired_at' => Carbon::now(),
         ];
 
         // if ($request->hasFile('avatar')) {
