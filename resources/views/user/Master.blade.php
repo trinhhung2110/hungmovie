@@ -137,7 +137,7 @@
             </div>
             <div class="col-lg-3">
                 <p>
-                    {{__('Copyright')}} &copy;<script>document.write(new Date().getFullYear());</script> {{__('All rights reserved | This template is made with')}} &hearts; {{__('by')}} <br> <a href="https://www.facebook.com/trinhhung00" target="_blank">hung</a>
+                    {{__('Copyright')}} &copy;<script>document.write(new Date().getFullYear());</script> {{__('All rights reserved | This template is made with')}} &hearts; {{__('by')}} <br> <a href="https://www.facebook.com/trinhhung00" target="_blank">team Thanh Nup</a>
                 </p>
                 </div>
             </div>
