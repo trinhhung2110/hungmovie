@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ asset('AdminLTE-3.0.5/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css')}}">
 <style>
     .card-body {
-        width: 80%;
+        box-shadow: 0px 0px 5px 0px #888888;
     }
     h5,h2 {
         color: white
@@ -33,13 +33,14 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                        <h5 class="my-4">Week Plan</h5>
+                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold">Week Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                         <h2 class="mb-3">20.000vnd/week</h2>
+                         <h3 class="mb-3">20.000đ/week</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST">
                                 @csrf
-                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3" >Upgrade </button>
                             </form>
                         </div>
                     </div>
@@ -49,13 +50,14 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                        <h5 class="my-4">Month Plan</h5>
+                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold">Month Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                            <h2 class="mb-3">70.000vnd/month</h2>
+                            <h3 class="mb-3 font-weight-bold">70.000đ/month</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST">
                                 @csrf
-                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
+                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3" >Upgrade </button>
                             </form>
                         </div>
                     </div>
@@ -65,13 +67,14 @@
                     <div class="card">
                     <div class="card-body d-flex flex-column justify-content-around mx-auto">
                         <div class="text-center pt-5">
-                        <h5 class="my-4">Year Plan</h5>
+                            <img src="{{ asset("upload/avatar/box.png") }}" alt="" style="max-width: 100%">
+                            <h4 class="my-2 font-weight-bold">Year Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                            <h2 class="mb-3">750.000vnd/year</h2>
+                            <h3 class="mb-3 font-weight-bold">750.000đ/year</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST">
                                 @csrf
-                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill"> Upgrade </button>
+                                <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3"> Upgrade </button>
                             </form>
                         </div>
                     </div>
