@@ -139,11 +139,11 @@ class HomeController extends Controller
         $vnp_OrderInfo = "thanh toan test";
         $vnp_OrderType = 'billpayment';
         if ($type == 1) {
-            $vnp_Amount = 20000;
+            $vnp_Amount = 20000 * 1000;
         } elseif ($type == 2) {
-            $vnp_Amount = 70000;
+            $vnp_Amount = 70000 * 1000;
         } else {
-            $vnp_Amount = 750000;
+            $vnp_Amount = 750000 * 1000;
         }
 
 
