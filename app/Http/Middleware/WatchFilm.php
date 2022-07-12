@@ -18,7 +18,7 @@ class WatchFilm
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->is_pay == 0 && Auth::user()->expired_at >= Carbon::now()) {
+        if (Auth::user()->is_pay == 0 && Auth::user()->expired_at <= Carbon::now()) {
             return redirect()->route('upgrade');
         }
         return $next($request);
