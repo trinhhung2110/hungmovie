@@ -82,7 +82,18 @@
                             @if (isset($data->link_trailer))
                                 <span class="follow-btn popup-link" style="cursor: pointer" id="trailler">{{__('Trailler')}}</span>
                             @endif
-                            <a href="{{route('watching_index', ['id' => $data->id, 'episode' => 1])}}" class="watch-btn"><span>{{__('Watch Now')}}</span> <i
+                            @php
+                                if (Auth::guard('web')->user()) {
+                                    if (Auth::user()->is_pay == 0 && Auth::user()->expired_at >= Carbon\Carbon::now()) {
+                                        $href = route('upgrade');
+                                    } else {
+                                        $href = route('watching_index', ['id' => $data->id, 'episode' => 1]);
+                                    }
+                                } else {
+                                    $href = route('user_login')
+                                }
+                            @endphp
+                            <a href="{{$href}}" class="watch-btn"><span>{{__('Watch Now')}}</span> <i
                                 class="fa fa-angle-right"></i></a>
                             </div>
                         </div>

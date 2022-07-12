@@ -28,7 +28,7 @@
 
                     <div class="text-center my-5">
                       <h2 class="mb-3">20.000vnd/week</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST">
+                      <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST" target="_blank">
                         @csrf
                         <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
                       </form>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="text-center my-5">
                       <h2 class="mb-3">70.000vnd/month</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST">
+                      <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST" target="_blank">
                         @csrf
                         <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
                       </form>                    </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="text-center my-5">
                       <h2 class="mb-3">750.000vnd/year</h2>
-                      <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST">
+                      <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST" target="_blank">
                         @csrf
                         <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill" >Upgrade </button>
                       </form>                    </div>
