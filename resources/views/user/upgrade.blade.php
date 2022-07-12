@@ -17,11 +17,8 @@
 
 @section('content')
 @if (request()->has('vnp_Amount'))
-    @dump(111);
     @php
-        alert()->success('Title','Lorem Lorem Lorem');
-        toast('Your Post as been submited!','error','top-right');
-        RealRashid\SweetAlert\Facades\Alert::warning('Warning Title', 'Warning Message');
+        toast('You are upgraded account success!', 'success', 'top-right');
     @endphp
 @endif
 <section class="content">
