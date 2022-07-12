@@ -119,13 +119,11 @@ class HomeController extends Controller
         return $data;
     }
 
-        /**
-     * Change language.
+    /**
      *
-     * @param String $language
      * @return \Illuminate\Http\Response
      */
-    public function upgrade($language)
+    public function upgrade()
     {
         return view('user.upgrade');
     }
