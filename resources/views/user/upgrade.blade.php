@@ -16,6 +16,7 @@
 @endsection
 
 @section('content')
+    @dump(session('pay'),111)
       @if(session('pay'))
         <script type="text/javascript">
             console.log(session('pay'));
