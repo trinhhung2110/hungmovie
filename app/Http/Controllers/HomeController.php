@@ -210,7 +210,7 @@ class HomeController extends Controller
                     'is_pay' => 1,
                     'expired_at' =>$expired_at,
                 ]);
-                session(['pay' => 'success']);
+                session()->put('pay' , 'success');
                 header('Location: ' . $vnp_Url);
                 die();
             } else {
