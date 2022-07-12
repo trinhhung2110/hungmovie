@@ -16,30 +16,14 @@
 @endsection
 
 @section('content')
-    @dump(session('pay'),111)
-      @if(session('pay'))
-        <script type="text/javascript">
-            console.log(session('pay'));
-            toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-bottom-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "3000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-            };
-            Command: toastr["success"]("Success", "{{ session('pay') }}")
-        </script>
-      @endif
+@if (request()->has('vnp_Amount'))
+    @dump(111);
+    @php
+        alert()->success('Title','Lorem Lorem Lorem');
+        toast('Your Post as been submited!','error','top-right');
+        RealRashid\SweetAlert\Facades\Alert::warning('Warning Title', 'Warning Message');
+    @endphp
+@endif
 <section class="content">
     <div class="container mb-5">
         <div class="row mb-5">
