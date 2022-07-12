@@ -40,7 +40,9 @@ class User extends Authenticatable
         'name',
         'birthday',
         'avatar',
-        'status'
+        'status',
+        'is_pay',
+        'expired_at'
     ];
 
     /**

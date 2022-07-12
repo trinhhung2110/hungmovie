@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Episode;
 use App\Models\Film;
+use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Config;
 use Illuminate\Support\Facades\DB;
@@ -131,7 +132,7 @@ class HomeController extends Controller
     public function commit($type)
     {
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = 'https://hostmovie.herokuapp.com/login';
+        $vnp_Returnurl = 'https://hostmovie.herokuapp.com/upgrade';
         $vnp_TmnCode = "AF4FL3OI";//Mã website tại VNPAY
         $vnp_HashSecret = "CTRJDSAXFQFTENNMIBJCABUBJBZQQZPV"; //Chuỗi bí mật
 
@@ -140,10 +141,13 @@ class HomeController extends Controller
         $vnp_OrderType = 'billpayment';
         if ($type == 1) {
             $vnp_Amount = 20000 * 100;
+            $expired_at = Carbon\Carbon::now()->addDays(7);
         } elseif ($type == 2) {
             $vnp_Amount = 70000 * 100;
+            $expired_at = Carbon\Carbon::now()->addDays(30);
         } else {
             $vnp_Amount = 750000 * 100;
+            $expired_at = Carbon\Carbon::now()->addDays(365);
         }
 
 
@@ -201,6 +205,10 @@ class HomeController extends Controller
             , 'message' => 'success'
             , 'data' => $vnp_Url);
             if (isset($_POST['redirect'])) {
+                User::where('id', auth()->user()->id)->update([
+                    'is_pay' => 1,
+                    'expired_at' =>$expired_at,
+                ]);
                 header('Location: ' . $vnp_Url);
                 die();
             } else {

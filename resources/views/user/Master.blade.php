@@ -73,6 +73,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{route('search_index')}}">{{__('Search')}}</a></li>
+                                <li><a href="{{route('upgrade')}}">Upgrade</a></li>
+
                             </ul>
                         </nav>
                     </div>
@@ -88,6 +90,7 @@
                                         <a href="{{route('user_follow')}}">{{__('Follow')}}</a>
                                         <a href="{{route('user_profile')}}">{{__('Profile')}}</a>
                                         <a href="{{route('user_logout')}}">{{__('Logout')}}</a>
+                                        <a href="{{route('upgrade')}}">Upgrade account</a>
                                     </div>
                                 @else
                                     <a href="{{route('user_login')}}" class="icon_profile"></a>
