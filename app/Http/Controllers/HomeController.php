@@ -127,6 +127,7 @@ class HomeController extends Controller
      */
     public function upgrade()
     {
+        session()->put('pay' , 'success');
         return view('user.upgrade');
     }
 
