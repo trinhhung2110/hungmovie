@@ -12,6 +12,9 @@
     h5,h2 {
         color: white
     }
+    .content {
+        min-height: calc(100% - 455px);
+    }
 </style>
 @endsection
 
@@ -24,7 +27,7 @@
 <section class="content">
     <div class="container mb-5">
         @if (auth()->user() && auth()->user()->is_pay == 1 && auth()->user()->expired_at >= Carbon\Carbon::now())
-            <div class="alert alert-light text-center" role="alert">
+            <div class="alert alert-light text-center font-weight-bold" role="alert">
                 Your account has been upgraded, the expired date is : {{ Carbon\Carbon::parse(auth()->user()->expired_at)->format('d/m/Y'); }}
             </div>
         @else
@@ -37,7 +40,7 @@
                             <h4 class="my-2 font-weight-bold text-white">Week Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                         <h3 class="mb-3 font-weight-bold">20.000đ/week</h3>
+                         <h3 class="mb-4 font-weight-bold">20.000đ/week</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 1]) }}" method="POST">
                                 @csrf
                                 <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3" >Upgrade </button>
@@ -54,7 +57,7 @@
                             <h4 class="my-2 font-weight-bold text-white">Month Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                            <h3 class="mb-3 font-weight-bold">70.000đ/month</h3>
+                            <h3 class="mb-4 font-weight-bold">70.000đ/month</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 2]) }}" method="POST">
                                 @csrf
                                 <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3" >Upgrade </button>
@@ -71,7 +74,7 @@
                             <h4 class="my-2 font-weight-bold text-white">Year Plan</h4>
                         </div>
                         <div class="text-center my-5">
-                            <h3 class="mb-3 font-weight-bold">750.000đ/year</h3>
+                            <h3 class="mb-4 font-weight-bold">750.000đ/year</h3>
                             <form action="{{ route('upgrade.commit', ['type' => 3]) }}" method="POST">
                                 @csrf
                                 <button type="submit" name="redirect" class="btn btn-outline-danger rounded-pill px-3"> Upgrade </button>
